@@ -4,8 +4,8 @@ function iniciarSimulacao() {
     const numRodadas = parseInt(document.getElementById("numRodadas").value);
     const porcCasa = parseFloat(document.getElementById("porcCasa").value) / 100;
     const porcApostador = parseFloat(document.getElementById("porcApostador").value) / 100;
-
-    const apostaPorRodada = 20;
+    const apostaPorRodada = parseInt(document.getElementById("apostaPorRodada").value);
+    /*const apostaPorRodada = 20;*/
     const resultados = simularApostas(numApostadores, saldoInicial, numRodadas, porcCasa, porcApostador, apostaPorRodada);
     renderizarGrafico(resultados);
 
