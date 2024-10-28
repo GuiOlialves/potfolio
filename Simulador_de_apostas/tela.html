@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Apostas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="logica.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Simulador de Apostas</h1>
+
+    <form id="simulacao-form">
+        <label for="numApostadores">Número de Apostadores:</label>
+        <input type="number" id="numApostadores" required>
+        
+        <label for="saldoInicial">Saldo Inicial de Cada Apostador (R$):</label>
+        <input type="number" id="saldoInicial" required>
+        
+        <label for="numRodadas">Número de Rodadas:</label>
+        <input type="number" id="numRodadas" required>
+        
+        <label for="porcCasa">Porcentagem de Vitória da Casa (%):</label>
+        <input type="number" id="porcCasa" required>
+        
+        <label for="porcApostador">Porcentagem de Vitória do Apostador (%):</label>
+        <input type="number" id="porcApostador" required>
+        
+        <button type="button" onclick="iniciarSimulacao()">Simular</button>
+    </form>
+
+    <div id="grafico-container">
+        <canvas id="grafico"></canvas>
+    </div>
+
+    <div id="resumo">
+        <h2>Resumo da Simulação</h2>
+        <p id="totalApostado"></p>
+        <p id="valorCasa"></p>
+        <p id="valorJogadores"></p>
+    </div>
+
+</body>
+</html>
