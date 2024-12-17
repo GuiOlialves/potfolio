@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  outline: 0px;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background: #3f46cf;
+}
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+h1 {
+  font-weight: bold;
+}
+.relogio {
+  margin: 40px 0px;
+  font-size: 60px;
+}
+.pausado {
+  color: red;
+}
