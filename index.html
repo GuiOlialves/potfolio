@@ -12,9 +12,13 @@
     <script src="portfolio/script.js" defer></script>
   </head>
   <body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
     <header class="header-nave">
       <nav>
         <ul class="nave">
+          <li><a href="#inicio" class="navitem">Início</a></li>
           <li><a href="#Experiencia" class="navitem">Experiência</a></li>
           <li><a href="#formacao" class="navitem">Formação</a></li>
           <li><a href="#projetos" class="navitem">Projetos</a></li>
@@ -23,14 +27,14 @@
       </nav>
     </header>
 
-    <main class="introducao">
+    <main class="introducao secao-pagina" id="inicio">
       <div class="foto-container">
         <img src="portfolio/minha-foto.jpg" alt="Foto de Guilherme" id="foto" />
       </div>
       <div class="introtext">
         <h1>
           Desenvolvedor <br />
-          <span class="text-gradient">Front-end e <br />Back-end</span>
+          <span class="text-gradient type-effect"></span><span class="cursor">|</span>
         </h1>
         <p>Localizado em São Paulo</p>
         
@@ -40,7 +44,7 @@
       </div>
     </main>
 
-    <section class="Experiencia" id="Experiencia" aria-label="Experiência">
+    <section class="Experiencia secao-pagina" id="Experiencia" aria-label="Experiência">
       <h2 class="Subtitulo text-gradient">Expe<br />riên<br />cia</h2>
       <div>
         <p class="Experiencia-texto">
@@ -63,25 +67,10 @@
             <li>Python</li>
           </ul>
         </div>
-        
-        <div class="empresa">
-          <span class="empresa-ano">2023</span>
-          <h3 class="empresa-titulo">Nome da Empresa</h3>
-          <span class="empresa-cargo">Estagiário</span>
-          <p class="empresa-texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            dolorem? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <ul class="empresa-habilidade">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <section class="formacao" id="formacao" aria-label="Formação">
+    <section class="formacao secao-pagina" id="formacao" aria-label="Formação">
       <div class="formacao-container">
         <h2 class="Subtitulo2 text-gradient">Formação</h2>
 
@@ -124,7 +113,7 @@
       </div>
     </section>
 
-    <section class="projetos" id="projetos" aria-label="Projetos">
+    <section class="projetos secao-pagina" id="projetos" aria-label="Projetos">
       <h2 class="titulo-secao text-gradient">Galeria de Projetos</h2>
       <div class="cards">
         <div class="card">
@@ -133,46 +122,10 @@
             <img src="portfolio/projeto1.png" alt="Projeto 1" />
           </a>
         </div>
-        <div class="card">
-          <a href="/Simulador_de_apostas/tela.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="portfolio/projeto2.png" alt="Projeto 2" />
-          </a>
         </div>
-        <div class="card">
-          <a href="/clube/inicio.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="/portfolio/projeto3.png" alt="Projeto 3" />
-          </a>
-        </div>
-        <div class="card">
-          <a href="/calculadoraImc/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="/portfolio/projeto4.png" alt="Projeto 4" />
-          </a>
-        </div>
-        <div class="card">
-          <a href="/Timer/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="/portfolio/projeto5.png" alt="Projeto 5" />
-          </a>
-        </div>
-        <div class="card">
-          <a href="/listaTarefas/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="/portfolio/prjeto6.png" alt="Projeto 6" />
-          </a>
-        </div>
-        <div class="card">
-          <a href="/validaCpf/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="/portfolio/projeto7.png" alt="Projeto 7" />
-          </a>
-        </div>
-      </div>
     </section>
 
-    <section class="contato" id="contato" aria-label="Contato">
+    <section class="contato secao-pagina" id="contato" aria-label="Contato">
       <h2 class="titulo-secao text-gradient">Contatos</h2>
       <div class="cards2">
         <a href="#" class="card2">
@@ -180,19 +133,16 @@
           <span class="icon-titulo">LinkedIn</span>
           <span class="icon-subtitulo">@GuilhermeOliveira</span>
         </a>
-
         <a href="mailto:gui.olialves2@gmail.com" class="card2">
           <img src="portfolio/email.png" alt="E-mail" class="icons" />
           <span class="icon-titulo">E-Mail</span>
           <span class="icon-subtitulo">gui.olialves2@gmail.com</span>
         </a>
-
         <a href="#" class="card2">
           <img src="portfolio/insta.png" alt="Instagram" class="icons" />
           <span class="icon-titulo">Instagram</span>
           <span class="icon-subtitulo">@Guilhermeolialves</span>
         </a>
-
         <a href="#" class="card2">
           <img src="portfolio/github.png" alt="GitHub" class="icons" />
           <span class="icon-titulo">GitHub</span>
