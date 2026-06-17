@@ -1,154 +1,55 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="portfolio/style.css" />
-    <script src="portfolio/script.js" defer></script>
-  </head>
-  <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-
-    <header class="header-nave">
-      <nav>
-        <ul class="nave">
-          <li><a href="#inicio" class="navitem">Início</a></li>
-          <li><a href="#Experiencia" class="navitem">Experiência</a></li>
-          <li><a href="#formacao" class="navitem">Formação</a></li>
-          <li><a href="#projetos" class="navitem">Projetos</a></li>
-          <li><a href="#contato" class="navitem">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="introducao secao-pagina" id="inicio">
-      <div class="foto-container">
-        <img src="portfolio/minha-foto.jpg" alt="Foto de Guilherme" id="foto" />
-      </div>
-      <div class="introtext">
-        <h1>
-          Desenvolvedor <br />
-          <span class="text-gradient type-effect"></span><span class="cursor">|</span>
-        </h1>
-        <p>Localizado em São Paulo</p>
-        
-        <a href="portfolio/curriculo.pdf" download="Curriculo_Guilherme_Oliveira.pdf" class="btn-download">
-          Baixar Currículo
-        </a>
-      </div>
-    </main>
-
-    <section class="Experiencia secao-pagina" id="Experiencia" aria-label="Experiência">
-      <h2 class="Subtitulo text-gradient">Expe<br />riên<br />cia</h2>
-      <div>
-        <p class="Experiencia-texto">
-          Atualmente estou cursando Sistemas de Informação no SENAC e me interesso pela área de dados, automação, ML e QA.
-        </p>
-        
-        <div class="empresa">
-          <span class="empresa-ano">2024</span>
-          <h3 class="empresa-titulo">Nome da Empresa</h3>
-          <span class="empresa-cargo">Desenvolvedor Júnior</span>
-          <p class="empresa-texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
-            dolorem? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <ul class="empresa-habilidade">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>Python</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="formacao secao-pagina" id="formacao" aria-label="Formação">
-      <div class="formacao-container">
-        <h2 class="Subtitulo2 text-gradient">Formação</h2>
-
-        <div>
-          <ul class="faculdadelista">
-            <li class="faculdade">
-              <span class="faculdade-tipo">Bacharelado</span>
-              <h3 class="faculdade-curso">Sistemas de Informação</h3>
-              <span class="faculdade-instituicao">SENAC</span>
-              <span class="faculdade-periodo">2026 - 2029</span>
-            </li>
-
-            <li class="faculdade">
-              <span class="faculdade-tipo">Técnico</span>
-              <h3 class="faculdade-curso">Desenvolvimento de Sistemas</h3>
-              <span class="faculdade-instituicao">ETEC Irmã Agostina</span>
-              <span class="faculdade-periodo">2024 - 2025</span>
-              <p class="projeto-final">
-                <strong>Projeto Final:</strong> VetControl - um sistema de gerenciamento de estoque e controle financeiro.
-              </p>
-            </li>
-          </ul>
-
-          <div class="formacao-extra">
-            <div class="cursos">
-              <h3>Cursos Intensivos</h3>
-              <ul>
-                <li>Python do zero ao avançado <span>56h</span></li>
-                <li>Front-end para iniciantes <span>76h</span></li>
-              </ul>
-            </div>
-            <div class="idiomas">
-              <h3>Idiomas</h3>
-              <ul>
-                <li>Inglês <span>/ Avançado</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projetos secao-pagina" id="projetos" aria-label="Projetos">
+<section class="projetos secao-pagina" id="projetos" aria-label="Projetos">
       <h2 class="titulo-secao text-gradient">Galeria de Projetos</h2>
       <div class="cards">
+        
         <div class="card">
           <a href="../loja/loja.html">
             <div class="card-overlay">Ver Projeto</div>
             <img src="portfolio/projeto1.png" alt="Projeto 1" />
           </a>
         </div>
-        </div>
-    </section>
 
-    <section class="contato secao-pagina" id="contato" aria-label="Contato">
-      <h2 class="titulo-secao text-gradient">Contatos</h2>
-      <div class="cards2">
-        <a href="#" class="card2">
-          <img src="portfolio/linkedin.png" alt="LinkedIn" class="icons" />
-          <span class="icon-titulo">LinkedIn</span>
-          <span class="icon-subtitulo">@GuilhermeOliveira</span>
-        </a>
-        <a href="mailto:gui.olialves2@gmail.com" class="card2">
-          <img src="portfolio/email.png" alt="E-mail" class="icons" />
-          <span class="icon-titulo">E-Mail</span>
-          <span class="icon-subtitulo">gui.olialves2@gmail.com</span>
-        </a>
-        <a href="#" class="card2">
-          <img src="portfolio/insta.png" alt="Instagram" class="icons" />
-          <span class="icon-titulo">Instagram</span>
-          <span class="icon-subtitulo">@Guilhermeolialves</span>
-        </a>
-        <a href="#" class="card2">
-          <img src="portfolio/github.png" alt="GitHub" class="icons" />
-          <span class="icon-titulo">GitHub</span>
-          <span class="icon-subtitulo">GuiOlialves</span>
-        </a>
+        <div class="card">
+          <a href="/Simulador_de_apostas/tela.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="portfolio/projeto2.png" alt="Projeto 2" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="/clube/inicio.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="/portfolio/projeto3.png" alt="Projeto 3" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="/calculadoraImc/index.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="/portfolio/projeto4.png" alt="Projeto 4" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="/Timer/index.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="/portfolio/projeto5.png" alt="Projeto 5" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="/listaTarefas/index.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="/portfolio/prjeto6.png" alt="Projeto 6" />
+          </a>
+        </div>
+
+        <div class="card">
+          <a href="/validaCpf/index.html">
+            <div class="card-overlay">Ver Projeto</div>
+            <img src="/portfolio/projeto7.png" alt="Projeto 7" />
+          </a>
+        </div>
+
       </div>
     </section>
-  </body>
-</html>
