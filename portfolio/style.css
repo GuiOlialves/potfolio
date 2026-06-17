@@ -51,14 +51,28 @@
   ); /* Garante que a seção ocupe a tela e o footer não suba */
 }
 
-.secao-pagina.active-grid {
+/* .secao-pagina.active-grid {
   display: grid;
 }
 
 .secao-pagina.active-block {
   display: block;
+} */
+
+.secao-pagina.active {
+  display: block;
+}
+.formacao.active {
+  display: grid;
 }
 
+.projetos.active {
+  display: grid;
+}
+
+.contato.active {
+  display: grid;
+}
 /* Marca o menu ativo */
 .navitem.active-nav {
   color: var(--text-main);
@@ -295,11 +309,9 @@ a {
   max-width: 1100px;
   padding: 100px 20px;
   margin: 0 auto;
-  display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 80px;
 }
-
 .Subtitulo,
 .Subtitulo2,
 .titulo-secao {
