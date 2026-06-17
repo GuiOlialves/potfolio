@@ -1,13 +1,12 @@
-/* Configurações Globais e Variáveis de Cores */
 :root {
-    --bg-dark: #0f0f11;       /* Preto principal do fundo */
-    --bg-card: #18181c;       /* Cinza escuro para dar contraste aos cards */
-    --bg-card-hover: #222228; /* Leve clareada no hover */
-    --text-main: #f4f4f5;     /* Branco suave para leitura */
-    --text-muted: #a1a1aa;    /* Cinza para textos secundários */
-    --purple-main: #9d4edd;   /* Roxo moderno */
-    --purple-hover: #7b2cbf;  /* Roxo mais escuro para hover */
-    --border-color: #27272a;  /* Linhas divisórias sutis */
+    --bg-dark: #0f0f11;       
+    --bg-card: #18181c;       
+    --bg-card-hover: #222228; 
+    --text-main: #f4f4f5;     
+    --text-muted: #a1a1aa;    
+    --purple-main: #9d4edd;   
+    --purple-hover: #7b2cbf;  
+    --border-color: #27272a;  
 }
 
 * {
@@ -20,7 +19,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
-    font-family: 'Inter', Arial, sans-serif; /* Fonte moderna e limpa */
+    font-family: 'Inter', Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -37,23 +36,15 @@ a {
 /* ================= HEADER ================= */
 .header-nave {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Menu alinhado à direita após remoção da logo */
     padding: 24px 60px;
     align-items: center;
-    background-color: rgba(15, 15, 17, 0.9); /* Leve transparência */
-    backdrop-filter: blur(8px); /* Efeito de vidro moderno */
+    background-color: rgba(15, 15, 17, 0.9); 
+    backdrop-filter: blur(8px); 
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: fade-in-left 1s forwards ease-out;
 }
 
 .nave {
@@ -104,9 +95,9 @@ a {
 }
 
 #foto {
-    width: 280px;
-    height: 380px;
-    border-radius: 16px;
+    width: 210px;       /* Foto reduzida conforme solicitado */
+    height: 285px;      /* Mantida a proporção mais compacta */
+    border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--border-color);
@@ -127,7 +118,6 @@ a {
     margin-bottom: 30px;
 }
 
-/* Botão de Currículo */
 .btn-download {
     display: inline-block;
     padding: 14px 32px;
@@ -252,12 +242,6 @@ a {
     gap: 60px;
 }
 
-.formacao-texto {
-    font-size: 1.125rem;
-    color: var(--text-muted);
-    margin-bottom: 50px;
-}
-
 .faculdadelista {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -272,6 +256,8 @@ a {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .faculdade:hover {
@@ -290,12 +276,27 @@ a {
 
 .faculdade-curso {
     font-size: 1.25rem;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .faculdade-instituicao {
-    color: var(--text-muted);
+    color: var(--text-main);
+    font-weight: 600;
     font-size: 1rem;
+}
+
+.faculdade-periodo {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.projeto-final {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+    margin-top: auto;
 }
 
 .formacao-extra {
@@ -355,6 +356,21 @@ a {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     transition: transform 0.3s, box-shadow 0.3s;
+    height: 220px; /* Garante que o card ocupe espaço mesmo se a imagem falhar */
+}
+
+.card a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
 .card:hover {
@@ -363,15 +379,7 @@ a {
     border-color: var(--purple-main);
 }
 
-.projeto-foto {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.card:hover .projeto-foto {
+.card:hover img {
     transform: scale(1.05);
 }
 
@@ -417,13 +425,6 @@ a {
     width: 48px;
     height: 48px;
     margin-bottom: 20px;
-    filter: invert(1); /* Deixa ícones pretos brancos - remova se seus ícones já tiverem cor própria */
-    transition: filter 0.3s;
-}
-
-.card2:hover .icons {
-    /* Opcional: tenta aplicar um tom roxo no hover via filtro CSS (depende da imagem original) */
-    filter: invert(41%) sepia(87%) saturate(2255%) hue-rotate(248deg) brightness(88%) contrast(92%);
 }
 
 .icon-titulo {
@@ -472,13 +473,12 @@ a {
     }
 
     .header-nave {
-        flex-direction: column;
+        justify-content: center;
         padding: 20px;
-        gap: 20px;
     }
 
     .nave {
-        gap: 15px;
+        gap: 20px;
     }
     
     .Subtitulo, .Subtitulo2, .titulo-secao {
