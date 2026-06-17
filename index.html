@@ -6,7 +6,7 @@
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="portfolio/style.css" />
     <script src="portfolio/script.js" defer></script>
@@ -24,12 +24,13 @@
     </header>
 
     <main class="introducao">
-      <img src="portfolio/minha-foto.jpg" alt="Foto de Guilherme" id="foto" />
+      <div class="foto-container">
+        <img src="portfolio/minha-foto.jpg" alt="Foto de Guilherme" id="foto" />
+      </div>
       <div class="introtext">
         <h1>
           Desenvolvedor <br />
-          Front-end e <br />
-          Back-end
+          <span class="text-gradient">Front-end e <br />Back-end</span>
         </h1>
         <p>Localizado em São Paulo</p>
         
@@ -40,10 +41,10 @@
     </main>
 
     <section class="Experiencia" id="Experiencia" aria-label="Experiência">
-      <h2 class="Subtitulo">Expe<br />riên<br />cia</h2>
+      <h2 class="Subtitulo text-gradient">Expe<br />riên<br />cia</h2>
       <div>
         <p class="Experiencia-texto">
-          Atualmente estou cursando Sistemas de Informação no SENAC e me interesso pela área de dados, automação, ML, QA.
+          Atualmente estou cursando Sistemas de Informação no SENAC e me interesso pela área de dados, automação, ML e QA.
         </p>
         
         <div class="empresa">
@@ -82,7 +83,7 @@
 
     <section class="formacao" id="formacao" aria-label="Formação">
       <div class="formacao-container">
-        <h2 class="Subtitulo2">Formação</h2>
+        <h2 class="Subtitulo2 text-gradient">Formação</h2>
 
         <div>
           <ul class="faculdadelista">
@@ -124,40 +125,47 @@
     </section>
 
     <section class="projetos" id="projetos" aria-label="Projetos">
-      <h2 class="titulo-secao">Galeria de Projetos</h2>
+      <h2 class="titulo-secao text-gradient">Galeria de Projetos</h2>
       <div class="cards">
         <div class="card">
           <a href="../loja/loja.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="portfolio/projeto1.png" alt="Projeto 1" />
           </a>
         </div>
         <div class="card">
           <a href="/Simulador_de_apostas/tela.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="portfolio/projeto2.png" alt="Projeto 2" />
           </a>
         </div>
         <div class="card">
           <a href="/clube/inicio.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="/portfolio/projeto3.png" alt="Projeto 3" />
           </a>
         </div>
         <div class="card">
           <a href="/calculadoraImc/index.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="/portfolio/projeto4.png" alt="Projeto 4" />
           </a>
         </div>
         <div class="card">
           <a href="/Timer/index.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="/portfolio/projeto5.png" alt="Projeto 5" />
           </a>
         </div>
         <div class="card">
           <a href="/listaTarefas/index.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="/portfolio/prjeto6.png" alt="Projeto 6" />
           </a>
         </div>
         <div class="card">
           <a href="/validaCpf/index.html">
+            <div class="card-overlay">Ver Projeto</div>
             <img src="/portfolio/projeto7.png" alt="Projeto 7" />
           </a>
         </div>
@@ -165,7 +173,7 @@
     </section>
 
     <section class="contato" id="contato" aria-label="Contato">
-      <h2 class="titulo-secao">Contatos</h2>
+      <h2 class="titulo-secao text-gradient">Contatos</h2>
       <div class="cards2">
         <a href="#" class="card2">
           <img src="portfolio/linkedin.png" alt="LinkedIn" class="icons" />
