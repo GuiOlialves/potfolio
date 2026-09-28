@@ -1,225 +1,457 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="portfolio/style.css" />
-    <script src="portfolio/script.js" defer></script>
-  </head>
-  <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
-
-    <header class="header-nave">
-      <nav>
-        <ul class="nave">
-          <li><a href="#inicio" class="navitem">Início</a></li>
-          <li><a href="#Experiencia" class="navitem">Experiência</a></li>
-          <li><a href="#formacao" class="navitem">Formação</a></li>
-          <li><a href="#projetos" class="navitem">Projetos</a></li>
-          <li><a href="#contato" class="navitem">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="introducao secao-pagina" id="inicio">
-      <div class="foto-container">
-        <img src="portfolio/minha-foto.jpg" alt="Foto de Guilherme" id="foto" />
-      </div>
-      <div class="introtext">
-        <h1>
-          Desenvolvedor <br />
-          <span class="text-gradient type-effect"></span
-          ><span class="cursor">|</span>
-        </h1>
-        <p>Localizado em São Paulo</p>
-
-        <a
-          href="portfolio/curriculo.pdf"
-          download="Curriculo_Guilherme_Oliveira.pdf"
-          class="btn-download"
-        >
-          Baixar Currículo
-        </a>
-      </div>
-    </main>
-    <section
-      class="Experiencia secao-pagina"
-      id="Experiencia"
-      aria-label="Experiência"
-    >
-      <h2 class="Subtitulo text-gradient">Expe<br />riên<br />cia</h2>
-      <div>
-        <p class="Experiencia-texto">
-          Atualmente estou cursando Sistemas de Informação no SENAC e me
-          interesso pela área de dados, automação, ML e QA.
-        </p>
-
-        <div class="empresa">
-          <span class="empresa-ano">2024 - 2025</span>
-          <h3 class="empresa-titulo">VetControl (Projeto Acadêmico)</h3>
-          <span class="empresa-cargo">Desenvolvedor Full-Stack</span>
-          <p class="empresa-texto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101311">
+<meta name="description" content="Guilherme Oliveira — desenvolvimento de software, Python, dados e automação. Conheça meus projetos e minha trajetória.">
+<title>Guilherme Oliveira | Desenvolvimento, Dados & Automação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio/style.css">
+<link rel="stylesheet" href="portfolio/sections.css">
+<script src="portfolio/script.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header">
+<div class="nav-shell">
+<a class="brand" href="#inicio" aria-label="Guilherme Oliveira, início">g<span>.</span>o<span class="brand-slash">/</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span>
+</button>
+<nav id="navigation" aria-label="Navegação principal">
+<a class="navitem" href="#inicio" aria-current="location">Início</a>
+<a class="navitem" href="#Experiencia">Sobre</a>
+<a class="navitem" href="#tecnologias">Stack</a>
+<a class="navitem" href="#projetos">Projetos</a>
+<a class="navitem" href="#formacao">Formação</a>
+<a class="navitem nav-contact" href="#contato">Vamos conversar <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="conteudo">
+<section class="hero container" id="inicio" aria-labelledby="hero-title">
+<div class="hero-copy">
+<div class="eyebrow hero-enter">
+<span class="status-dot">
+</span> Em busca da primeira oportunidade</div>
+<h1 class="hero-enter" id="hero-title">Guilherme<br>
+<span>Oliveira</span><span class="title-dot">.</span>
+</h1>
+<p class="hero-role hero-enter">Desenvolvimento, dados<br>e ideias em movimento.</p>
+<p class="hero-description hero-enter">Estudante de Sistemas de Informação. Construindo soluções e explorando possibilidades com Python, dados e automação.</p>
+<div class="hero-actions hero-enter">
+<a href="#projetos" class="button primary">Explorar projetos <span aria-hidden="true">↗</span>
+</a>
+<a class="button secondary" href="portfolio/Curriculo.pdf" download="Curriculo_Guilherme_Oliveira.pdf">Currículo <span aria-hidden="true">↓</span>
+</a>
+</div>
+<div class="hero-location hero-enter">
+<span aria-hidden="true">⌖</span> São Paulo, Brasil <span class="divider">/</span> Aprender. Construir. Evoluir.</div>
+</div>
+<div class="lab hero-enter" aria-label="Laboratório interativo de áreas de interesse">
+<div class="lab-top mono">
+<span>
+<span class="status-dot">
+</span> playground / 01</span>
+<span>INTERATIVO</span>
+</div>
+<div class="network" data-mode="code">
+<div class="orbit orbit-one">
+</div>
+<div class="orbit orbit-two">
+</div>
+<svg class="connections" viewBox="0 0 480 330" aria-hidden="true">
+<path d="M240 165 L90 75 M240 165 L390 75 M240 165 L90 255 M240 165 L390 255"/>
+<circle class="signal" r="4">
+<animateMotion dur="3s" repeatCount="indefinite" path="M90 75 L240 165 L390 255"/>
+</circle>
+</svg>
+<span class="network-label label-one mono">entrada</span>
+<span class="network-label label-two mono">lógica</span>
+<span class="network-label label-three mono">processo</span>
+<span class="network-label label-four mono">solução</span>
+<div class="core">
+<span class="core-symbol" aria-hidden="true">&lt;/&gt;</span>
+<span class="mono core-label">CONSTRUIR</span>
+</div>
+<span class="axis axis-x mono">x</span>
+<span class="axis axis-y mono">y</span>
+</div>
+<div class="lab-controls" role="group" aria-label="Explorar uma área">
+<button type="button" data-lab="code" aria-pressed="true">01 Código</button>
+<button type="button" data-lab="data" aria-pressed="false">02 Dados</button>
+<button type="button" data-lab="auto" aria-pressed="false">03 Automação</button>
+</div>
+<div class="lab-console" aria-live="polite">
+<span class="mono console-command">&gt; explorar("desenvolvimento")</span>
+<p class="console-description">Da ideia à interface. Da lógica à solução.</p>
+</div>
+<div class="lab-foot mono">
+<span>Selecione uma área para explorar</span>
+<span aria-hidden="true">↖</span>
+</div>
+</div>
+<div class="hero-bottom mono">
+<span>SOFTWARE COM CURIOSIDADE & PROPÓSITO</span>
+<a href="#Experiencia">Continue explorando <span aria-hidden="true">↓</span>
+</a>
+</div>
+</section>
+<div class="focus-strip">
+<div class="container">
+<span>PYTHON</span>
+<i>/</i>
+<span>DADOS</span>
+<i>/</i>
+<span>AUTOMAÇÃO</span>
+<i>/</i>
+<span>DESENVOLVIMENTO</span>
+<i>/</i>
+<span>PESQUISA</span>
+</div>
+</div>
+<section class="section container" id="Experiencia">
+<div class="section-heading reveal">
+<span class="eyebrow">01 / Sobre & trajetória</span>
+<h2>Curiosidade que<br>vira <em>construção.</em>
+</h2>
+</div>
+<div class="about-grid">
+<div class="about-summary reveal">
+<div class="portrait">
+<img src="portfolio/minha-foto.jpg" alt="Guilherme Oliveira" loading="lazy" width="210" height="285">
+<span class="mono">GUILHERME OLIVEIRA<br>SÃO PAULO · BR</span>
+</div>
+<p>Atualmente curso <strong>Sistemas de Informação no SENAC</strong> e aprofundo meus conhecimentos em Python, dados e automação.</p>
+<p>Me interesso por análise de dados, machine learning, QA e pesquisa. Aprendo colocando ideias em prática — de aplicações web à computação quântica.</p>
+<a class="text-link" href="#contato">Vamos trocar ideias <span aria-hidden="true">↗</span>
+</a>
+</div>
+<div class="timeline reveal">
+<div class="empresa">
+<span class="empresa-ano">2024 - 2025</span>
+<h3 class="empresa-titulo">VetControl (Projeto Acadêmico)</h3>
+<span class="empresa-cargo">Desenvolvedor Full-Stack</span>
+<p class="empresa-texto">
             Desenvolvimento de um sistema web para gestão de clínicas
             veterinárias, integrando controle de estoque, listas de agendamento
             e controle financeiro.
           </p>
-          <ul class="empresa-habilidade">
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>MongoDB</li>
-            <li>JavaScript</li>
-          </ul>
-        </div>
-
-        <div class="empresa">
-          <span class="empresa-ano">2026 - Atual</span>
-          <h3 class="empresa-titulo">SENAC Santo Amaro</h3>
-          <span class="empresa-cargo">Iniciação Científica (IC)</span>
-          <p class="empresa-texto">
+<ul class="empresa-habilidade">
+<li>Node.js</li>
+<li>Express</li>
+<li>MongoDB</li>
+<li>JavaScript</li>
+</ul>
+</div>
+<div class="empresa">
+<span class="empresa-ano">2026 - Atual</span>
+<h3 class="empresa-titulo">SENAC Santo Amaro</h3>
+<span class="empresa-cargo">Iniciação Científica (IC)</span>
+<p class="empresa-texto">
             Pesquisa voltada à computação quântica, explorando a reconstrução de
-            imagens atraves da equação de FRQI + criptografia da imagem
+            imagens através da equação de FRQI + criptografia da imagem
           </p>
-          <ul class="empresa-habilidade">
-            <li>Computação Quântica</li>
-            <li>Algoritmos</li>
-            <li>Python</li>
-            <li>Logística</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="formacao secao-pagina" id="formacao" aria-label="Formação">
-      <div class="formacao-container">
-        <h2 class="Subtitulo2 text-gradient">Formação</h2>
-
-        <div>
-          <ul class="faculdadelista">
-            <li class="faculdade">
-              <span class="faculdade-tipo">Bacharelado</span>
-              <h3 class="faculdade-curso">Sistemas de Informação</h3>
-              <span class="faculdade-instituicao">SENAC</span>
-              <span class="faculdade-periodo">2026 - 2029</span>
-            </li>
-
-            <li class="faculdade">
-              <span class="faculdade-tipo">Técnico</span>
-              <h3 class="faculdade-curso">Desenvolvimento de Sistemas</h3>
-              <span class="faculdade-instituicao">ETEC Irmã Agostina</span>
-              <span class="faculdade-periodo">2024 - 2025</span>
-              <p class="projeto-final">
-                <strong>Projeto Final:</strong> VetControl - um sistema de
+<ul class="empresa-habilidade">
+<li>Computação Quântica</li>
+<li>Algoritmos</li>
+<li>Python</li>
+<li>Logística</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="stack-section" id="tecnologias">
+<div class="container section">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">02 / Caixa de ferramentas</span>
+<h2>Tecnologia com<br>
+<em>intenção.</em>
+</h2>
+</div>
+<p>Uma base em desenvolvimento.<br>Um olhar voltado para dados e automação.</p>
+</div>
+<div class="stack-grid">
+<article class="stack-card reveal">
+<span class="stack-icon mono">{ }</span>
+<span class="eyebrow">01 / Linguagens</span>
+<h3>A lógica por trás.</h3>
+<ul class="tags">
+<li>Python</li>
+<li>JavaScript</li>
+<li>TypeScript</li>
+<li>Java</li>
+</ul>
+</article>
+<article class="stack-card reveal">
+<span class="stack-icon mono">&lt;/&gt;</span>
+<span class="eyebrow">02 / Desenvolvimento</span>
+<h3>Da tela ao servidor.</h3>
+<ul class="tags">
+<li>HTML & CSS</li>
+<li>React</li>
+<li>Next.js</li>
+<li>Node.js</li>
+<li>Express</li>
+<li>EJS</li>
+<li>Tailwind CSS</li>
+</ul>
+</article>
+<article class="stack-card reveal">
+<span class="stack-icon mono">[▤]</span>
+<span class="eyebrow">03 / Dados & ferramentas</span>
+<h3>Conectar e organizar.</h3>
+<ul class="tags">
+<li>MySQL</li>
+<li>MongoDB</li>
+<li>Git</li>
+<li>GitHub</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section container" id="projetos">
+<div class="section-heading split reveal">
+<div>
+<span class="eyebrow">03 / Projetos selecionados</span>
+<h2>Menos teoria.<br>
+<em>Mais prática.</em>
+</h2>
+</div>
+<a class="text-link" href="https://github.com/GuiOlialves" target="_blank" rel="noopener noreferrer">Meu GitHub <span aria-hidden="true">↗</span>
+</a>
+</div>
+<article class="featured-project reveal">
+<div class="feature-content">
+<span class="eyebrow">
+<span class="status-dot">
+</span> Destaque / Projeto acadêmico</span>
+<h3>VetControl<span>.</span>
+</h3>
+<p>Tecnologia para cuidar de quem cuida.</p>
+<p class="muted">Sistema web de gestão de clínicas veterinárias. Agenda dinâmica, controle de estoque, dashboard financeiro e prontuários em uma aplicação.</p>
+<ul class="tags">
+<li>Node.js</li>
+<li>Express</li>
+<li>MongoDB</li>
+<li>EJS</li>
+<li>JavaScript</li>
+</ul>
+<a class="button secondary" href="https://github.com/GuiOlialves/TCC2" target="_blank" rel="noopener noreferrer">Explorar no GitHub <span aria-hidden="true">↗</span>
+</a>
+</div>
+<div class="feature-diagram" aria-label="Módulos do VetControl">
+<div class="mono diagram-caption">VETCONTROL / ARQUITETURA FUNCIONAL</div>
+<div class="diagram-root">VC<span>VetControl</span>
+</div>
+<div class="diagram-branches">
+<span>↳ Agenda</span>
+<span>↳ Estoque</span>
+<span>↳ Financeiro</span>
+<span>↳ Prontuários</span>
+</div>
+<span class="mono diagram-bottom">Uma aplicação. Cuidado conectado.</span>
+</div>
+</article>
+<div class="projects-label mono">
+<span>EXPERIMENTOS & APLICAÇÕES WEB</span>
+<span>07 PROJETOS</span>
+</div>
+<div class="project-grid">
+<article class="project-card reveal wide">
+<a class="project-preview" href="loja/loja.html" aria-label="Abrir demonstração: InfiniteTech">
+<img src="portfolio/projeto1.png" alt="Interface do projeto InfiniteTech" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Interface · E-commerce</span>
+<h3>InfiniteTech</h3>
+<p>Loja de tecnologia com catálogo e carrinho persistente.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="loja/loja.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="Simulador_de_apostas/tela.html" aria-label="Abrir demonstração: Simulador de apostas">
+<img src="portfolio/projeto2.png" alt="Interface do projeto Simulador de apostas" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Lógica · Simulação</span>
+<h3>Simulador de apostas</h3>
+<p>Um experimento de lógica, probabilidades e interação.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="Simulador_de_apostas/tela.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="clube/inicio.html" aria-label="Abrir demonstração: Galeria interativa">
+<img src="portfolio/projeto3.png" alt="Interface do projeto Galeria interativa" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Interação · Sprites</span>
+<h3>Galeria interativa</h3>
+<p>Uma exploração de navegação com personagem e sprites.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="clube/inicio.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="calculadoraImc/index.html" aria-label="Abrir demonstração: Calculadora de IMC">
+<img src="portfolio/projeto4.png" alt="Interface do projeto Calculadora de IMC" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Formulários · Lógica</span>
+<h3>Calculadora de IMC</h3>
+<p>Cálculo e classificação do índice de massa corporal.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="calculadoraImc/index.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="Timer/index.html" aria-label="Abrir demonstração: Timer">
+<img src="portfolio/projeto5.png" alt="Interface do projeto Timer" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Eventos · Tempo</span>
+<h3>Timer</h3>
+<p>Cronômetro com controles para iniciar, pausar e reiniciar.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="Timer/index.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="listaTarefas/index.html" aria-label="Abrir demonstração: Lista de tarefas">
+<img src="portfolio/prjeto6.png" alt="Interface do projeto Lista de tarefas" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Produtividade · DOM</span>
+<h3>Lista de tarefas</h3>
+<p>Uma interface prática para organizar tarefas do dia a dia.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="listaTarefas/index.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+<article class="project-card reveal ">
+<a class="project-preview" href="validaCpf/index.html" aria-label="Abrir demonstração: Validador de CPF">
+<img src="portfolio/projeto7.png" alt="Interface do projeto Validador de CPF" loading="lazy" width="800" height="450">
+<span class="preview-arrow" aria-hidden="true">↗</span>
+</a>
+<div class="project-body">
+<span class="eyebrow">Algoritmos · Validação</span>
+<h3>Validador de CPF</h3>
+<p>Validação de CPF com verificação dos dígitos.</p>
+<div class="project-bottom">
+<span class="mono">HTML / CSS / JavaScript</span>
+<a href="validaCpf/index.html">Abrir demo <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="education-section" id="formacao">
+<div class="section container">
+<div class="section-heading reveal">
+<span class="eyebrow">04 / Formação</span>
+<h2>Sempre em<br>
+<em>desenvolvimento.</em>
+</h2>
+</div>
+<div class="education-content reveal">
+<ul class="faculdadelista">
+<li class="faculdade">
+<span class="faculdade-tipo">Bacharelado</span>
+<h3 class="faculdade-curso">Sistemas de Informação</h3>
+<span class="faculdade-instituicao">SENAC</span>
+<span class="faculdade-periodo">2026 - 2029</span>
+</li>
+<li class="faculdade">
+<span class="faculdade-tipo">Técnico</span>
+<h3 class="faculdade-curso">Desenvolvimento de Sistemas</h3>
+<span class="faculdade-instituicao">ETEC Irmã Agostina</span>
+<span class="faculdade-periodo">2024 - 2025</span>
+<p class="projeto-final">
+<strong>Projeto Final:</strong> VetControl - um sistema de
                 gerenciamento de estoque e controle financeiro.
               </p>
-            </li>
-          </ul>
-
-          <div class="formacao-extra">
-            <div class="cursos">
-              <h3>Cursos Intensivos</h3>
-              <ul>
-                <li>Python do zero ao avançado <span>56h</span></li>
-                <li>Front-end para iniciantes <span>76h</span></li>
-              </ul>
-            </div>
-            <div class="idiomas">
-              <h3>Idiomas</h3>
-              <ul>
-                <li>Inglês <span>/ Avançado</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projetos secao-pagina" id="projetos" aria-label="Projetos">
-      <h2 class="titulo-secao text-gradient">Galeria de Projetos</h2>
-      <div class="cards">
-        <div class="card">
-          <a href="./loja/loja.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="portfolio/projeto1.png" alt="Projeto 1" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./Simulador_de_apostas/tela.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="portfolio/projeto2.png" alt="Projeto 2" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./clube/inicio.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="./portfolio/projeto3.png" alt="Projeto 3" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./calculadoraImc/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="./portfolio/projeto4.png" alt="Projeto 4" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./Timer/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="./portfolio/projeto5.png" alt="Projeto 5" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./listaTarefas/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="./portfolio/prjeto6.png" alt="Projeto 6" />
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="./validaCpf/index.html">
-            <div class="card-overlay">Ver Projeto</div>
-            <img src="./portfolio/projeto7.png" alt="Projeto 7" />
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contato secao-pagina" id="contato" aria-label="Contato">
-      <h2 class="titulo-secao text-gradient">Contatos</h2>
-      <div class="cards2">
-        <a href="#" class="card2">
-          <img src="portfolio/linkedin.png" alt="LinkedIn" class="icons" />
-          <span class="icon-titulo">LinkedIn</span>
-          <span class="icon-subtitulo">@GuilhermeOliveira</span>
-        </a>
-        <a href="mailto:gui.olialves2@gmail.com" class="card2">
-          <img src="portfolio/email.png" alt="E-mail" class="icons" />
-          <span class="icon-titulo">E-Mail</span>
-          <span class="icon-subtitulo">gui.olialves2@gmail.com</span>
-        </a>
-        <a href="#" class="card2">
-          <img src="portfolio/insta.png" alt="Instagram" class="icons" />
-          <span class="icon-titulo">Instagram</span>
-          <span class="icon-subtitulo">@Guilhermeolialves</span>
-        </a>
-        <a href="#" class="card2">
-          <img src="portfolio/github.png" alt="GitHub" class="icons" />
-          <span class="icon-titulo">GitHub</span>
-          <span class="icon-subtitulo">GuiOlialves</span>
-        </a>
-      </div>
-    </section>
-  </body>
+</li>
+</ul>
+<div class="formacao-extra">
+<div class="cursos">
+<h3>Cursos Intensivos</h3>
+<ul>
+<li>Python do zero ao avançado <span>56h</span>
+</li>
+<li>Front-end para iniciantes <span>76h</span>
+</li>
+</ul>
+</div>
+<div class="idiomas">
+<h3>Idiomas</h3>
+<ul>
+<li>Inglês <span>/ Avançado</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section container contact" id="contato">
+<div class="reveal">
+<span class="eyebrow">
+<span class="status-dot">
+</span> 05 / Próxima conexão</span>
+<h2>Boas ideias começam<br>com uma <em>conversa.</em>
+</h2>
+<p>Busco minha primeira oportunidade em tecnologia.<br>Aberto a estágios, projetos e novas ideias.</p>
+<a class="contact-email" href="mailto:gui.olialves2@gmail.com">gui.olialves2@gmail.com <span aria-hidden="true">↗</span>
+</a>
+<div class="social-links">
+<a href="https://linkedin.com/in/guilherme-oliveira-alves-" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+<a href="https://github.com/GuiOlialves" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="https://www.instagram.com/Guilhermeolialves/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+<a href="portfolio/Curriculo.pdf" download="Curriculo_Guilherme_Oliveira.pdf">Baixar currículo ↓</a>
+</div>
+</div>
+<div class="contact-mark" aria-hidden="true">g.o/</div>
+</section>
+</main>
+<footer class="container">
+<span>© <span id="year">2026</span> Guilherme Oliveira</span>
+<span class="mono">FEITO DE CÓDIGO & CURIOSIDADE</span>
+<a href="#inicio">Voltar ao topo ↑</a>
+</footer>
+</body>
 </html>
