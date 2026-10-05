@@ -1,113 +1,36 @@
-const character = document.getElementById('character');
-const sprites = {
-    up: ['Sprites/costa1.png', 'Sprites/costa2.png', 'Sprites/costa3.png', 'Sprites/costa4.png'],
-    down: ['Sprites/frente1.png', 'Sprites/frente2.png', 'Sprites/frente3.png', 'Sprites/frente4.png'],
-    left: ['Sprites/esquerda1.png', 'Sprites/esquerda2.png', 'Sprites/esquerda3.png', 'Sprites/esquerda4.png'],
-    right: ['Sprites/direita1.png', 'Sprites/direita2.png', 'Sprites/direita3.png', 'Sprites/direita4.png']
-};
-
-let positionX = window.innerWidth / 2;//anda
-let positionY = window.innerHeight / 2;//anda
-let currentFrame = 0; //fram inicial
-let currentDirection = 'down';
-
-
-//funcao de proximade, ela vai rodar o tempo todo para ver se o personagem esta perto
-function checkProximity() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();//esqueci
-        const popup = card.querySelector('.popup');//pega o pop up
-        const link = card.getAttribute('data-link');//coloca o link
-
-        // Calcula a distância entre o personagem e o centro do card, esta funcionando por algum motivo
-        const distanceX = Math.abs((positionX + character.offsetWidth / 2) - (rect.left + rect.width / 2));
-        const distanceY = Math.abs((positionY + character.offsetHeight / 2) - (rect.top + rect.height / 2));
-
-        // Exibe o pop-up se o personagem estiver próximo
-        if (distanceX < 200 && distanceY < 120) {
-            popup.style.display = 'block';
-
-           
-                popup.onclick = () => {
-                window.location.href = link; // Redireciona para o link do card
-            };
-            /*if(distanceX < 80 && distanceY < 100){
-                window.location.href = link; // Redireciona para o link do card
-           }*/
-        } else {
-            popup.style.display = 'none';
-            popup.onclick = null; // Remove o evento se o pop-up não estiver visível
-        }
-    });
+const viewport = document.querySelector('#viewport');
+const world = document.querySelector('#world');
+const character = document.querySelector('#character');
+const stations = [...document.querySelectorAll('.station')];
+const hint = document.querySelector('#hint');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const sprites = {up:'costa',down:'frente',left:'esquerda',right:'direita'};
+const keys = {ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right'};
+const held = new Set();
+let x=470,y=270,direction='down',frame=0,lastFrame=0,lastTime=0,animation=null,nearest=null;
+Object.values(sprites).forEach(name=>{for(let i=1;i<=4;i++){const image=new Image();image.src=`Sprites/${name}${i}.png`;}});
+function render(){
+  character.style.transform=`translate(${x}px,${y}px)`;
+  character.style.backgroundImage=`url('Sprites/${sprites[direction]}${reducedMotion.matches?1:frame+1}.png')`;
+  viewport.scrollLeft=Math.max(0,Math.min(world.clientWidth-viewport.clientWidth,x+24-viewport.clientWidth/2));
+  viewport.scrollTop=Math.max(0,Math.min(world.clientHeight-viewport.clientHeight,y+24-viewport.clientHeight/2));
+  const candidate=stations.map(station=>({station,distance:Math.hypot(x+24-Number(station.dataset.x),y+24-Number(station.dataset.y))})).sort((a,b)=>a.distance-b.distance)[0];
+  const next=candidate.distance<155?candidate.station:null;
+  if(next!==nearest){nearest=next;stations.forEach(station=>station.classList.toggle('active',station===nearest));hint.textContent=nearest?`${nearest.querySelector('strong').textContent} — ${nearest.dataset.description} Pressione Enter para abrir.`:'Aproxime-se de uma estação para explorar.';}
 }
-
-
-
-//muda frames
-function updateSprite()  {
-    character.style.backgroundImage = `url(${sprites[currentDirection][currentFrame]})`;
-    currentFrame = (currentFrame + 1) % sprites[currentDirection].length;
+function tick(time){
+  const delta=Math.min((time-lastTime)/1000,.04);lastTime=time;
+  let dx=(held.has('right')?1:0)-(held.has('left')?1:0),dy=(held.has('down')?1:0)-(held.has('up')?1:0);
+  if(dx||dy){const length=Math.hypot(dx,dy);x=Math.max(0,Math.min(912,x+dx/length*190*delta));y=Math.max(0,Math.min(532,y+dy/length*190*delta));direction=dy<0?'up':dy>0?'down':dx<0?'left':'right';if(time-lastFrame>130){frame=(frame+1)%4;lastFrame=time;}render();}
+  if(held.size)animation=requestAnimationFrame(tick);else{animation=null;frame=0;render();}
 }
-//move
-function moveCharacter(direction) {
-    currentDirection = direction;
-    updateSprite();
+function start(){if(animation===null){lastTime=performance.now();animation=requestAnimationFrame(tick);}}
+function stop(){held.clear();}
+window.addEventListener('keydown',event=>{if(event.target.closest('input,textarea,select,button,a'))return;const move=keys[event.key]||keys[event.key.toLowerCase()];if(move){event.preventDefault();held.add(move);start();}else if(event.key==='Enter'&&nearest){event.preventDefault();nearest.click();}});
+window.addEventListener('keyup',event=>{const move=keys[event.key]||keys[event.key.toLowerCase()];if(move)held.delete(move);});
+window.addEventListener('blur',stop);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+document.querySelectorAll('[data-direction]').forEach(button=>{button.addEventListener('pointerdown',event=>{event.preventDefault();button.setPointerCapture(event.pointerId);held.add(button.dataset.direction);start();});['pointerup','pointercancel','lostpointercapture'].forEach(name=>button.addEventListener(name,()=>held.delete(button.dataset.direction)));button.addEventListener('click',event=>{if(event.detail===0){direction=button.dataset.direction;x=Math.max(0,Math.min(912,x+(direction==='right'?30:direction==='left'?-30:0)));y=Math.max(0,Math.min(532,y+(direction==='down'?30:direction==='up'?-30:0)));render();}});});
+document.querySelector('#reset').addEventListener('click',()=>{stop();x=470;y=270;direction='down';frame=0;render();viewport.focus();});
+window.addEventListener('resize',render);reducedMotion.addEventListener('change',render);render();
 
-    switch (direction) {
-        case 'up':
-            positionY -= 5;
-            break;
-        case 'down':
-            positionY += 5;
-            break;
-        case 'left':
-            positionX -= 5;
-            break;
-        case 'right':
-            positionX += 5;
-            break;
-    }
-
-    // Atualiza a posição do personagem
-    character.style.transform = `translate(${positionX}px, ${positionY}px)`;
-
-     // Calcula o deslocamento da câmera
-     let offsetX = window.innerWidth / 2 - positionX;
-     const offsetY = window.innerHeight / 2 - positionY;
-     // Limita o deslocamento para a esquerda (impede que o main vá além de 0 para esquerda ou antes do titulo)
-     offsetX = Math.min(offsetX, 0);
-    // Move o main para centralizar o personagem na camera
-    document.querySelector('main').style.transform = `translate(${offsetX}px`;
-    checkProximity();
-}
-//eventos
-window.addEventListener('keydown', (e) => {
-    switch (e.key) {
-        case 'ArrowUp':
-            moveCharacter('up');
-            break;
-        case 'ArrowDown':
-            moveCharacter('down');
-            break;
-        case 'ArrowLeft':
-            moveCharacter('left');
-            break;
-        case 'ArrowRight':
-            moveCharacter('right');
-            break;
-    }
-});
-
-
-
-
-
-
-// Chame checkProximity sempre que o personagem se mover
-window.addEventListener('keydown', (e) => {
-    const directions = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right' };
-    if (directions[e.key]) {
-        moveCharacter(directions[e.key]);
-    }
-});

@@ -329,6 +329,20 @@
   pointer-events:none;
   z-index:-1
 }
+.web-projects {margin-top:48px;border-top:1px solid var(--border);padding-top:28px}
+.web-projects-heading {display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:22px}
+.web-projects-heading h3 {font-size:23px}
+.web-projects-heading p {font-size:12px;color:var(--muted);max-width:400px}
+.web-gallery-project {display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:center;padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:#14101b;transition:border-color var(--speed)}
+.web-gallery-project:hover {border-color:var(--accent)}
+.web-gallery-project h4 {font:500 26px var(--display);letter-spacing:-.035em;margin:12px 0}
+.web-gallery-project h4 span {color:var(--accent)}
+.web-gallery-project p {color:var(--muted);font-size:13px;max-width:600px;margin-bottom:18px}
+.web-gallery-art {position:relative;display:flex;align-items:center;justify-content:center;height:170px;border:1px solid #49305e;border-radius:6px;background:linear-gradient(#a855f70a 1px,transparent 1px),linear-gradient(90deg,#a855f70a 1px,transparent 1px),#1b1225;background-size:24px 24px;gap:25px}
+.web-gallery-art>span:first-child {position:absolute;top:15px;left:15px;font-size:9px;color:#c084fc}
+.web-gallery-art img {image-rendering:pixelated;object-fit:contain}
+.web-gallery-keys {text-align:center;color:#c084fc;line-height:1.8}
+@media(max-width:760px){.web-projects-heading{display:block}.web-projects-heading p{margin-top:10px}.web-gallery-project{grid-template-columns:1fr;padding:20px;gap:20px}.web-gallery-project h4{font-size:23px}}
 /* Pesquisa: composition and circuit visualization */
 .research-section {
   position:relative;
