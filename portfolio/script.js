@@ -66,9 +66,9 @@ if ('IntersectionObserver' in window) {
   });
 }
 const modes = {
-  code: { symbol: '</>', label: 'CONSTRUIR', nodes: ['entrada', 'lógica', 'processo', 'solução'], command: '> explorar("desenvolvimento")', description: 'Da ideia à interface. Da lógica à solução.' },
-  data: { symbol: '[ ]', label: 'DESCOBRIR', nodes: ['dados', 'Python', 'análise', 'insights'], command: '> explorar("dados")', description: 'Conectar informações. Encontrar novas perguntas.' },
-  auto: { symbol: '↻', label: 'SIMPLIFICAR', nodes: ['entrada', 'rotina', 'Python', 'resultado'], command: '> explorar("automação")', description: 'Transformar tarefas repetitivas em possibilidades.' }
+  code: { symbol: '</>', label: 'CONSTRUIR', nodes: ['entrada', 'lógica', 'processo', 'solução'], command: '> explorar("desenvolvimento")', description: 'Desenvolvimento de interfaces com HTML, CSS e JavaScript.' },
+  data: { symbol: '[ ]', label: 'DESCOBRIR', nodes: ['dados', 'Python', 'análise', 'insights'], command: '> explorar("dados")', description: 'Análise de dados com Python e machine learning.' },
+  auto: { symbol: '↻', label: 'SIMPLIFICAR', nodes: ['entrada', 'rotina', 'Python', 'resultado'], command: '> explorar("automação")', description: 'Automação de tarefas repetitivas com Python.' }
 };
 const lab = document.querySelector('.lab');
 lab.querySelectorAll('[data-lab]').forEach(button => {
